@@ -1,0 +1,16 @@
+
+<div class="body">
+    <div class="list"  [ngStyle]="{'height': _m.list.length>3 ? _m.list.length*65+'px' : '70%'}">
+    <div class="head">
+        <p style="font-size: 20px; float: left; padding: 10px;">edit</p>
+        <input type="text" class="myInput" [(ngModel)] = "value.name">
+        <button class="myButton" (click)="save()">save</button>
+    </div>
+    <br>
+    <div class="listBody" *ngFor="let item of _m.list ;  index as i">
+        <mat-checkbox class="check" color="white">{{item['index']+1}} :{{item['name']}}</mat-checkbox>
+        <button mat-icon-button (click)="edit(item)"><mat-icon fontIcon="edit" style="margin-right: 20px; color: teal;" ></mat-icon></button>
+        <button mat-icon-button (click)="delete(item['index'])"><mat-icon fontIcon="delete" style="color : teal"></mat-icon></button>
+    </div>
+</div></div>
+
